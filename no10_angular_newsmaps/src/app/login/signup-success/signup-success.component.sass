@@ -1,0 +1,27 @@
+@mixin center
+  display: flex
+  justify-content: center
+  align-items: center
+mat-card
+  font-size: 24pt
+  width: 300px
+mat-card-content
+  +center
+  flex-direction: column
+// mat-form-field
+.normalInput
+  font-size: 20pt
+  width: 350px
+  margin-top: 0px
+mat-card-actions
+  +center
+  justify-content: space-around
+.mat-raised-button
+  padding: 5px 50px
+  font-size: 16pt
+.mat-card-header
+  +center
+.mat-card-title
+  font-weight: bolder
+  text-align: center
+

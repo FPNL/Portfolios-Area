@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Newser</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/newscontent.css">
+    <!-- <link rel="stylesheet" href="sass/default.css"> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+       @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+        fieldset, label { 
+            margin: 0; 
+            padding: 0; 
+            /* width: 100%; */
+        }
+        /****** Style Star Rating Widget *****/
+
+        .rating { 
+        border: none;
+        /* float: left; */
+        }
+
+        .rating > input { display: none; } 
+        .rating > label:before { 
+        margin: 4px;
+        font-size: 24pt;
+        font-family: FontAwesome;
+        display: inline-block;
+        content: "\f005";
+        }
+
+        .rating > .half:before { 
+        content: "\f089";
+        position: absolute;
+        }
+
+        .rating > label { 
+        color: #ddd; 
+        float: right; 
+        }
+
+        /***** CSS Magic to Highlight Stars on Hover *****/
+
+        .rating > input:checked ~ label, /* show gold star when clicked */
+        .rating:not(:checked) > label:hover, /* hover current star */
+        .rating:not(:checked) > label:hover ~ label { color: #fe0f6d;  } /* hover previous stars in list */
+
+        .rating > input:checked + label:hover, /* hover current star when changing rating */
+        .rating > input:checked ~ label:hover,
+        .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+        .rating > input:checked ~ label:hover ~ label { color: #f94d91;  } 
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="news_nav_area">
+                <i class="fas fa-bars"></i>
+                <nav>
+                    <ul>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">哈囉</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">哈囉</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">哈囉</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">哈囉</span></a></li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">國際</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">當地</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">商業</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">科學與科技</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">娛樂</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">體育</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">健康</span></a></li>
+                    </ul>
+                </nav>
+            </div>  
+            <div id="news_logo_area">
+                <div>
+                    <a href=""> 
+                        <img src="img/logo.jpg" alt="LOGO">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        立即發現<br>
+                        周邊大小事
+                    </a>
+                </div>
+            </div>   
+            <div id="news_toggle_area">
+                <label>
+                    <a href="index.html">
+                        <span>地圖版</span>  
+                    </a>  
+                    <label id="switch">
+                            <input id="switchToggle" type="checkbox" onchange="window.location.href='index.html'" >
+                            <span class="slider round"></span>
+                    </label>
+                    
+                </label>
+            </div>
+            <div id="news_search_area">
+                
+                <div class="container-fluid">
+                    <nav class="navbar navbar-light bg-info">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2 bg-light" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0 bg-light" type="submit">Search</button>
+                        </form>
+                    </nav>
+                </div>
+            </div>
+            <div id="news_pers_inf_area">
+                <div id="pers_descr">
+                    <div id="pers_desc-1">
+                        <div id="pers_name"><a href=""><span>田小梅</span></a></div>
+                        <div id="pers_location"><i class="fas fa-map-marker-alt"></i><a href=""><span>台中市</span></a> </div>
+                    </div>
+                    <div id="pers_desc-2"><span>發布<a href="">1000</a>則新聞</span></div>
+                </div>
+                <div id="pers_icon"><a href=""><span><img src="img/icon.jpg" alt="頭像"></span></a> </div>
+            </div>
+
+
+        </header>
+        <main> 
+            <div id="news_content_column">
+                <div id="news_content_caption">
+                    <span>
+                        TitleTitleTitle  TitleTitleTitle  TitleTitleTitle  TitleTitleTitle
+                    </span>
+                </div>
+                <div id="news_content_main">
+                    <div id="news_content_main_1">
+                        <div id="public_date"><span>發布日期 年月日 時分秒</span></div>
+                        <div id="return_list"><a href=""><span>返回列表 ></span></a></div>
+                    </div>
+                    <div id="news_content_main_2">
+                        <div id="news_class"><a href=""><span class="news_clss_span">居家生活</span></a> </div>
+                        <div id="news_icon_bar">
+                            <div class="news_distance news_icon_items">
+                                <div class="news_distance_icon news_icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="news_distance_descr news_descr">
+                                    <a href="">
+                                        <span>50220 Km</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="news_views news_icon_items">
+                                <div class="news_views_icon news_icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="news_views_descr news_descr">
+                                    <span>
+                                        20
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="news_rate news_icon_items">
+                                <div class="news_rate_icon news_icon">
+                                    <i class="far fa-star"></i>                                   
+                                </div>
+                                <div class="news_rate_descr news_descr">
+                                    <span>
+                                        4.5
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="news_content_main_3">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt autem, explicabo consequatur ad possimus molestias fugit. Quo itaque non laboriosam tempora voluptas culpa dolorem nobis deserunt sint sapiente, placeat maiores minima delectus possimus unde amet dicta facilis distinctio velit accusantium sed blanditiis assumenda! Quas porro quasi, excepturi ducimus temporibus sequi quidem ex quia recusandae dolorem libero deleniti modi labore, iure molestias inventore iusto. Nesciunt eos voluptates soluta quibusdam tenetur iste sequi perferendis dolor. Dignissimos possimus explicabo assumenda eaque consequuntur, modi deleniti accusamus amet quo quasi quis temporibus enim debitis deserunt adipisci aperiam vitae sint numquam. Nam quam voluptatum accusantium voluptas blanditiis? Atque laboriosam beatae consequuntur, maiores distinctio numquam debitis facilis dignissimos provident consequatur molestias quas deleniti impedit obcaecati ipsa commodi. Dignissimos placeat blanditiis, fugiat voluptas natus eligendi sunt pariatur distinctio saepe recusandae, impedit optio fuga eos. Facilis, voluptates! Iusto, vitae alias sint voluptatem distinctio nesciunt architecto praesentium dicta. Ratione aspernatur dolore repellendus mollitia, non quod. Distinctio pariatur tempora quidem, a numquam quae alias dolorum neque ipsam enim beatae iure ab deleniti maxime voluptatem? Debitis commodi enim expedita nisi quaerat, maxime sequi vero soluta similique? Eveniet, nesciunt earum laudantium a minima unde eaque provident cumque laborum itaque, assumenda eligendi. Molestiae vitae vel debitis doloremque obcaecati laudantium culpa alias distinctio nam vero, aspernatur illum numquam labore odio magnam temporibus impedit in blanditiis non necessitatibus ex? Blanditiis, odit sunt. Fuga, natus placeat ea, sed maiores facere, ad labore minima eligendi quod minus necessitatibus vitae. Architecto dolorem nihil quis. Maiores magni minus iure. Debitis ad a magnam nisi recusandae, doloribus consequuntur earum repudiandae nostrum minima ex eius in ab quia voluptatem, saepe, fugit harum aliquid cum aspernatur laboriosam. Minus, deleniti! Officiis quas eos velit quo deleniti dolor iste doloremque accusantium, dolorum ipsam illum fugiat nemo dolore, minus itaque vel, culpa quam enim quae sint hic. Natus minima, hic, amet eius iure quod libero atque magnam consectetur totam accusamus tempore veritatis quibusdam doloremque, alias dolor expedita? Culpa neque dolores sit voluptatum officia reiciendis, id fuga eum nihil deserunt. Harum perferendis vel id modi aspernatur tempora? Expedita autem voluptatum hic similique ratione aperiam repudiandae doloremque ut deserunt nostrum, quae aliquam eius maxime. Expedita facere ipsam perspiciatis eveniet maiores, natus facilis cupiditate accusantium similique aliquid blanditiis atque totam hic culpa quis autem! Iusto, aut similique consequuntur corporis autem aliquam, ad nam soluta quo odit necessitatibus delectus voluptatum. A qui, explicabo dolore soluta accusantium aliquam aspernatur tempore eius voluptas quae. Enim et, voluptatem ipsum dolorum praesentium beatae perspiciatis aperiam aliquid accusamus, maxime at alias quia illum, officia quo libero velit architecto aliquam. Pariatur ea perspiciatis neque enim! Aperiam ducimus facere iste beatae perspiciatis dolores, nulla veritatis asperiores dolor quo eos maiores rem? Ut, suscipit excepturi. Consequatur, repudiandae magnam. Voluptas, harum enim sequi eos dolores non labore officiis minus veritatis? Fuga, quis. Optio adipisci nostrum inventore quidem laudantium enim libero molestias similique quo assumenda ratione obcaecati nihil vel laboriosam asperiores suscipit excepturi ipsa, rem corporis necessitatibus officia magni recusandae modi? Magnam exercitationem hic consequuntur facere esse explicabo velit.
+                        
+                    </div>
+                    <div id="news_content_main_4">
+                        <div id="news_content_main4_icon" class="news_content_icon"><img src="img/0.png" alt=""></div>
+                        <div id="news_content_ration">
+                            <div id="news_content_rate_descr">
+                                <span>此則新聞由 <a href="">田曉玫</a> 發佈<br></span>
+                                <span>覺得新聞不錯嗎?請給我鼓勵!</span>
+                            </div>
+                            <div id="news_content_rate">
+                                <fieldset class="rating">
+                                    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                                    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                                    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+                                    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                                    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                                    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                </fieldset>
+                            </div>
+                        </div>
+                        
+                        <div id="news_trim">
+                            <a href="">
+                                <span>修改新聞</span> 
+                            </a>
+                        </div>
+                    </div>
+                        
+                </div>
+                <div id="review">
+                    <div id="review_caption">
+                        <span>留言討論</span>
+                    </div>
+                    <div id="review_content">
+                        <div class="input-item empty" contenteditable="true" data-placeholder="新增公開留言"></div>
+                    </div>
+                    <div id="review_submit">
+                        <input type="submit" value="送出留言">
+                    </div>
+                </div>
+                <div id="comment_section">
+                        <div class="comment">
+                            <div class="news_content_icon">
+                                <img src="img/0.png" alt="">
+                            </div>
+                            <div class="comment_main">
+                                <div class="comment_pers_name"><span>Say:</span></div>
+                                <div class="comment_descr">
+                                </div>
+                            </div>
+                        </div>
+            <!-- ---------------------comment lorem start 假留言開始 ----------------->
+                    <div class="comment">
+                        <div class="news_content_icon">
+                            <img src="img/0.png" alt="">
+                        </div>
+                        <div class="comment_main">
+                            <div class="comment_pers_name"><span>Say:</span></div>
+                            <div class="comment_descr">
+                                    ound-color: #000000
+                                    // padding: 8px
+                                    height: auto
+                                    display: flex
+                                    justify-content: flex-start\
+                                lorem200
+                            </div>
+                        </div>
+                    </div>
+            <!-- ---------------------comment lorem end 假留言結束 ----------------->
+                </div>
+                
+            </div>
+                
+            <div id="recommand_column">
+                <div id="class_tags">
+                    <div id="class_tags_caption">
+                        <img src="img/background-transparent.png" alt="分類標籤" class="transparent_img">
+                        <span>分類標籤</span>
+                    </div>
+                    <div id="class_tags_content">
+                        <ul>
+                            <li><a href=""><span>影視娛樂</span></a></li>
+                            <li><a href=""><span>揪團好康</span></a></li>
+                            <li><a href=""><span>交通路況</span></a></li>
+                            <li><a href=""><span>天氣氣候</span></a></li>
+                            <li><a href=""><span>生活優惠</span></a></li>
+                            <li><a href=""><span>藝文展覽</span></a></li>
+                            <li><a href=""><span>比賽活動</span></a></li>
+                            <li><a href=""><span>幼童親子</span></a></li>
+                            <li><a href=""><span>寵物友善</span></a></li>
+                            <li><a href=""><span>社會狀況</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="recommand_top5">
+                    <div id="recommand_top5_caption">
+                        <img src="img/background-transparent.png" alt="本周TOP5" class="transparent_img">
+                        <span>本周TOP5</span>
+                    </div>
+                    <div id="recommand_top5_content">
+                        <div class="recommand_top5_news">
+                            <div class="recommand_top5_news_class"><a href=""><span>活動展覽</span></a></div>
+                            <div class="recommand_top5_news_title"><a href=""><span>因為全棋同學的系統需求，雖然會員機制並不難，他一定也很快就學會了，而我還是寫此教學來引導他</span></a></div>
+                        </div>
+                        <hr class="recommand_top5_news_hr">
+                        <div class="recommand_top5_news">
+                                <div class="recommand_top5_news_class"><a href=""><span>活動展覽</span></a><a href=""><span>活動展覽</span></a></div>
+                                <div class="recommand_top5_news_title"><a href=""><span>制並不難，他一定也很快就學會了，而我還是寫此教學來引導他</span></a></div>
+                        </div>
+                        <hr class="recommand_top5_news_hr">
+                        <div class="recommand_top5_news">
+                                <div class="recommand_top5_news_class"><a href=""><span>活動展覽</span></a></div>
+                                <div class="recommand_top5_news_title"><a href=""><span>制並不難，他一定也很快就學會了，而我還是寫此教學</span></a></div>
+                        </div>
+                        <hr class="recommand_top5_news_hr">
+                        <div class="recommand_top5_news">
+                                <div class="recommand_top5_news_class"><a href=""><span>活動展覽</span></a><a href=""><span>活動展覽</span></a><a href=""><span>活動展覽</span></a></div>
+                                <div class="recommand_top5_news_title"><a href=""><span>制並不難，他一定也很快就學會了，而我還是寫此教學</span></a></div>
+                        </div>
+                        <hr class="recommand_top5_news_hr">
+                    </div>
+                    
+                </div>
+                <footer>
+                    <img src="img/background-transparent.png" alt="Copyright" class="transparent_img">
+                    <p>
+                        2018APP系統開發及資訊安全實務班<br
+                        >Copyright © 2018NewsMap <br>
+                        All rights reseved <br>
+                        Programming by CHANG,PEI-LIN <br>
+                        LAI,WEN-HUNG WU,MENG-YU
+                    </p>
+                </footer>
+            </div>
+
+        </main>
+    </div>
+    <script src="js/newscontent.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

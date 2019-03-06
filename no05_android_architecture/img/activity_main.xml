@@ -1,0 +1,13 @@
+    <Button
+        android:id="@+id/angry_btn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/camera_button"
+        android:drawableTop="@drawable/ic_camera_alt_black_24dp"
+        android:gravity="top|center"
+        android:paddingTop="40dp"
+        android:text="加入特寫照"
+        android:textColor="#7E7E7E"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="143dp" />

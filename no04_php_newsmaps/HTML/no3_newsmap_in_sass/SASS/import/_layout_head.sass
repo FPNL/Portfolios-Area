@@ -1,0 +1,163 @@
+header
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    height: $head_height 
+    padding: 8px
+    border-bottom: 1px solid #29487d
+    background-color: $header_bg_color
+#news_nav_area 
+    flex-grow: 1
+    @extend %txtCenter
+    display: none //fow a while
+    nav 
+        position: fixed
+        left: 0
+        top: $head_height
+        z-index: 5
+        width: $nav_bar_w
+        height: $main_height
+        padding: 8px 0
+        overflow: auto
+        background-color: #ff0ff0
+        ul 
+            width: 100%
+            li 
+                margin-top: 5px
+                height: $nav_bar_item_h
+                a 
+                    display: flex
+                    justify-content: flex-start
+                    align-items: center
+                    width: 99%
+                    height: 100%
+                    background-color: #fff
+                    .bar_icon
+                        margin-left: $nav_bar_item_icon_ml
+                        font-size: 16pt
+                    .bar_descr
+                        text-align: center
+                        margin-left:  $nav_bar_item_descr_ml
+
+
+
+#news_logo_area
+    flex-grow: 1
+    @extend %txtCenter
+    justify-content: center
+    padding: 4px
+    div
+        padding: 0 5px
+        a 
+            color: #ffffff
+            &:hover
+                text-decoration: none
+            img 
+                display: block
+                height: $logo_h
+                width: $logo_w
+
+#news_toggle_area
+    flex-grow: 1
+    @extend %txtCenter
+    justify-content: flex-start
+    padding: 4px
+    height: 40px
+    label 
+        @extend %txtCenter
+        a 
+            &:hover
+                text-decoration: none
+            span 
+                color: #fff
+        #switch 
+            position: relative
+            display: inline-block
+            width: 40px
+            height: 20px
+            margin: 0 3px
+            #switchToggle 
+                display: none
+            .slider 
+                position: absolute
+                cursor: pointer
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                background-color: #cccccc
+                -webkit-transition: .4s
+                transition: .4s
+            .slider:before 
+                position: absolute
+                content: ""
+                height: 16px
+                width: 16px
+                left: 2px
+                bottom: 2px
+                background-color: white
+                -webkit-transition: .4s
+                transition: .4s
+            input:checked + .slider 
+                background-color: #2196F3
+            input:focus + .slider 
+                box-shadow: 0 0 1px #2196F3
+            input:checked + .slider:before 
+                -webkit-transform: translateX(20px)
+                -ms-transform: translateX(20px)
+                transform: translateX(20px)
+            /* Rounded sliders */
+            .slider.round 
+                border-radius: 34px
+            .slider.round:before 
+                border-radius: 50%
+            &:hover
+                text-decoration: none 
+
+#news_search_area
+    flex-grow: 8
+    @extend %txtCenter
+    justify-content: flex-start
+    padding: 4px
+
+#news_pers_inf_area
+    flex-grow: 2
+    @extend %txtCenter
+    justify-content: flex-end
+    padding: 4px
+    #pers_descr 
+        padding: 4px
+        a 
+            color: #fff 
+            &:hover
+                text-decoration: none
+        #pers_desc-1
+            @extend %txtCenter
+            justify-content: space-between
+            padding: 1px
+            #pers_name
+                a
+                    color: #fff
+                    &:hover
+                        text-decoration: none 
+            #pers_location
+                a 
+                    color: #fff
+                    &:hover
+                        text-decoration: none
+        #pers_desc-2
+            padding: 1px
+            a
+                color: #fff
+                &:hover
+                    text-decoration: none 
+        
+    #pers_icon
+        padding: 4px
+        a 
+            color: #fff
+            img 
+                display: block
+                height: $pers_icon_h
+                width: $pers_icon_w
+                border-radius: 100%

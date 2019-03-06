@@ -1,0 +1,115 @@
+header 
+    width: 1024px
+    height: 300px
+    background-color: #424242
+    margin: 0 auto
+    display: flex
+    justify-content: flex-start
+    align-items: flex-start
+.head_content
+    margin-top: 74px
+    margin-left: 173px
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    height: 153px
+#logo
+    width: 117px
+    height: 117px
+    text-align: center
+    box-sizing: border-box
+#data_input
+    margin-left: 97px
+    width: 250px
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+.data
+    height: 65 px
+    width: 250px
+    margin-bottom: 23px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    box-sizing: border-box
+    span 
+        color: #FFD366
+        padding: 0 0 7px
+        font-size: 18px
+    input 
+        background: rgba(255,255,255,0.18)
+        border: 2px solid #FFD366
+        border-radius: 10px
+        padding: 8px 16px
+        color: #fff
+        font-size: 24px
+        width: 250px
+        height: 40px
+        box-sizing: border-box
+        &::placeholder
+            color: rgba(255,255,255,0.50)
+
+#btn_ask
+    width: 120px
+    height: 120px
+    cursor: pointer
+    background: #FFD366
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 100%
+    margin-left: 53px
+    // display: none
+    font-size: 24px
+    color: #424242
+    text-align: center
+    &:hover
+        box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64)
+    &:active
+        background: #DEA921
+    span 
+        
+#btn_show
+    height: 135px
+    width: 281px
+    display: flex
+    align-items: center
+    margin-left: 53px
+    display: none
+    #btn_show_retry
+        border: 6px solid
+        // border-color: #FF1200
+        border-radius: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        position: relative
+        // color: #FF1200
+        width: 123px
+        height: 123px
+        span 
+            font-size: 32px
+        span~span
+            font-size: 14px
+        a 
+            position: absolute
+            right: 0
+            bottom: 0
+            // background: #000
+            border: 3px solid 
+            border-color: #424242
+            border-radius: 100%
+            display: block
+            width: 30px
+            height: 30px
+            display: flex
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            
+    #btn_show_descr
+        font-size: 32px
+        color: #FF1200
+        margin-left: 18px

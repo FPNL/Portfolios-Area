@@ -1,0 +1,60 @@
+<mat-card *ngIf="getNews; else noGetData">
+  <mat-card-header>
+    <mat-card-title>修改新聞</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <form [formGroup]="addNews" (submit)="sendValue()">
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="標題" [formControlName]="'title'">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-chip-list #chipList>
+            <mat-chip *ngFor="let tag of tags" (removed)="removeTag(tag)">
+              {{tag}}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
+        <input
+            matInput
+            placeholder="關鍵字"
+            [matChipInputFor]="chipList"
+            [matChipInputAddOnBlur]="true"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="addTag($event)" [formControlName]="'tags'">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select placeholder="分類" [formControlName]="'labels'">
+          <mat-option *ngFor="let label of labels" [value]="label">
+            {{label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field [formGroupName]="'time'">
+        <input matInput [matDatepicker]="picker" placeholder="時間日期" [formControlName]="'add'">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker disabled='false'></mat-datepicker>
+      </mat-form-field>
+
+      <button mat-stroked-button type="button" class="uploadImageBtn">
+        <label for="imageUpload" mat-raised-button class="uploadImageLabel" >上傳圖片</label>
+        <mat-progress-bar [value]='uploadPorgress'></mat-progress-bar>
+      </button>
+      <input type="file" id="imageUpload" (change)="uploadImg($event)" style="display: none;" accept="image/*" >
+
+      <mat-form-field>
+        <textarea matInput placeholder="內容" matTextareaAutosize [formControlName]="'content'"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button type="submit">Ok</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
+<ng-template #noGetData>
+    <div class="spinnerDiv">
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+  </ng-template>

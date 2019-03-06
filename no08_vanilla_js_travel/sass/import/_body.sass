@@ -1,0 +1,90 @@
+main 
+    margin: 76px auto 0
+    text-align: right
+    width: 1024px
+.region
+    display: block
+    width: 109px
+    height: 36px
+    margin: 0 auto
+    text-align: center
+    span 
+        font-size: 36px
+        color: #8A82CC
+
+.region_cards
+    margin: 24px 0 50px
+    justify-content: center
+    display: grid
+    grid: [r1s] 273px /[c1] 464px [c2] 464px [c3]
+    grid-gap: 36px 16px
+    text-align: left
+.card
+    width: 464px
+    height: 273px
+    box-sizing: border-box
+    background-color: #fff
+    position: relative
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20)
+    a 
+        text-decoration: none
+.card_view
+    background: no-repeat center
+    background-image: url(http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960)
+    width: 464px
+    height: 155px
+    background-size: cover
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    padding: 0 22px 14px
+    box-sizing: border-box
+    color: #ffffff
+    span 
+        font-size: 24px
+    span ~ span 
+        font-size: 16px
+.card_descr
+    box-sizing: border-box
+    padding: 15px 24px 19px
+    font-size: 16px
+    .card_descr_left
+        padding: 6px 0
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        div
+            display: inline-block
+            width: 18px
+            height: 18px
+            text-align: center
+            margin-right: 9px
+            img 
+
+    .card_descr_tag
+        position: absolute
+        right: 24px
+        bottom: 19px
+        display: flex
+        align-items: center
+        div
+            display: inline-block
+            width: 18px
+            height: 18px
+            text-align: center
+            margin-right: 9px
+            img 
+
+#page_ul
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-bottom: 40px
+    .page_li
+        margin: 0 24px 
+        font-size: 14px
+        color: #4A4A4A
+        cursor: pointer
+    .page_li_point
+        margin: 0 34px
+    

@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{inputUser.nickname}}</mat-card-title>
+    <mat-card-subtitle>
+      <mat-icon>description</mat-icon>{{nrandom}}
+    </mat-card-subtitle>
+    <!-- <mat-card-subtitle>
+        <mat-icon>star_border</mat-icon> 123
+    </mat-card-subtitle> -->
+    <img *ngIf="!avatar" src="assets/avatarWithoutLogin.png" alt="" mat-card-avatar>
+    <img *ngIf="avatar" [src]="avatar" alt="oops" mat-card-avatar>
+  </mat-card-header>
+
+  <!-- <mat-card-actions>
+    <button mat-flat-button> #19a1c9 </button>
+  </mat-card-actions> -->
+</mat-card>

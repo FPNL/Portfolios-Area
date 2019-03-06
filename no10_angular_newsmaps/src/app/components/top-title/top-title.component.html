@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title-group>
+    <a [routerLink]="['/article', inputNews.id]">
+      <img mat-card-md-image [src]="inputNews.imagePath" />
+    </a>
+  </mat-card-title-group>
+  <mat-card-content >
+    <app-title-content [inputNewsContent]='inputNews'></app-title-content>
+  </mat-card-content>
+
+</mat-card>

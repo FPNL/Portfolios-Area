@@ -1,0 +1,22 @@
+<mat-grid-list cols="3" rowHeight="2:1" gutterSize="4px">
+  <ng-container *ngIf="news; else noNewsTemplate">
+    <mat-grid-tile colspan="3" *ngFor="let aNews of news">
+      <app-normal-title [inputNews]="aNews"></app-normal-title>
+      <app-user-title [inputUser]="aNews.user"></app-user-title>
+    </mat-grid-tile>
+  </ng-container>
+  <ng-template #noNewsTemplate>
+    <mat-grid-tile colspan="3">
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </mat-grid-tile>
+  </ng-template>
+  <mat-grid-tile colspan="3" *ngIf="noNews">
+    <p>
+      找不到
+      <span>
+        {{value}}
+      </span>
+      的相關資料~
+    </p>
+  </mat-grid-tile>
+</mat-grid-list>

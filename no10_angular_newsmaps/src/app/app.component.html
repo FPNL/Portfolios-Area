@@ -1,0 +1,74 @@
+<mat-toolbar color="primary">
+  <!-- <mat-icon>menu</mat-icon> -->
+  <a class="logoImg" [routerLink]="['/']" (click)="login = false"></a>
+  <!-- <mat-slide-toggle>
+    <mat-chip-list>
+      <mat-chip>Maps</mat-chip>
+    </mat-chip-list>
+  </mat-slide-toggle> -->
+  <span style="flex: 2 1 auto"></span>
+  <form class="searchForm" [formGroup]="searchGroup" (submit)="search()">
+    <mat-form-field floatLabel="never" class="searchField">
+      <input matInput placeholder="搜尋" formControlName="searchQuery" (keydown.space)="$event.preventDefault()" />
+    </mat-form-field>
+    <mat-form-field floatLabel="never">
+        <mat-select [formControlName]="'searchClass'">
+          <mat-option *ngFor="let label of searchClass" [value]="label.content">
+            {{label.title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <button mat-icon-button type="submit">
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+
+  <span style="flex: 2 1 auto"></span>
+  <ng-container *ngIf="user; else userTemplate">
+    <div class="loginRegion">
+      <img [src]="user.avatarPath">
+      <span>{{user.nickname}}</span>
+    </div>
+  </ng-container>
+  <ng-template #userTemplate>
+    <div class="loginRegion">
+      <img src="assets/avatarWithoutLogin.png">
+      <span>訪客</span>
+    </div>
+  </ng-template>
+  <ng-container *ngIf="user; else elseTemplate">
+    <div>
+      <button mat-flat-button color='warn' (click)="toLogout()">登出</button>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div>
+      <span>
+        請
+        <!-- <a [routerLink]="['/login']"  class="loginLink">登入</a> -->
+        <button mat-flat-button color='accent' (click)="toLogin()">登入</button>
+        或
+        <!-- <a [routerLink]="['/login']"  class="loginLink">註冊</a> -->
+        <button mat-flat-button color='accent' (click)="toLogin()">註冊</button>
+      </span>
+    </div>
+  </ng-template>
+
+
+  <!-- <div class="loginRegion">
+    <mat-form-field floatLabel="never">
+      <input matInput placeholder="帳號">
+    </mat-form-field>
+    <mat-form-field floatLabel="never">
+      <input matInput placeholder="密碼">
+    </mat-form-field>
+    <button mat-raised-button>登入</button>
+  </div> -->
+</mat-toolbar>
+
+<div [ngClass]="{mainContent: !login}">
+  <div [ngClass]="{'routerStatus': !login}">
+    <router-outlet></router-outlet>
+  </div>
+  <app-side-bar [ngClass]="{'sidebarStatus': login}"></app-side-bar>
+</div>

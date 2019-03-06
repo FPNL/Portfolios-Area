@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMI GO</title>
+    <link rel="stylesheet" href="sass/index.css">
+</head>
+<body>
+    <header id="header">
+        <div class="head_content">
+            <div id="logo"><img src="img/BMICLogo.png" alt=""></div>
+            <div id="data_input">
+                <div class="data"><span>身高 cm</span><input type="text" name="" id="input_height" placeholder="請輸入身高"></div>
+                <div class="data"><span>體重 kg</span><input type="text" name="" id="input_weight" placeholder="請輸入體重"></div>
+            </div>
+            <div id="btn_ask">看結果</div>
+            <div id="btn_show">
+                <div id="btn_show_retry">
+                    <span id="show_bmi"></span>
+                    <span>BMI</span>
+                    <a id="btn_retry"><img id="img_retry" src="img/icons_loop.png" alt=""></a>
+                </div>
+                <span id="btn_show_descr">輕度肥胖</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <span id="main_caption">BMI 紀錄</span>
+        <div id="main_items">
+        </div>
+    </main>
+    <footer>
+        <img src="img/BMICLogo.png" alt="">
+    </footer>
+
+
+    <script src="js/index.js"></script>
+</body>
+</html>

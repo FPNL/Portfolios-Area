@@ -1,0 +1,38 @@
+@mixin center
+  display: flex
+  justify-content: center
+  align-items: center
+
+.loginWrap
+  +center
+  width: 100vw
+  height: calc(100vh - 64px)
+  background: url("../../assets/loginBackground.png") left top/200% 200% no-repeat
+
+mat-card
+  font-size: 24pt
+  width: 400px
+mat-card-content
+  +center
+  flex-direction: column
+mat-form-field
+  font-size: 20pt
+  width: 350px
+  margin-top: 20px
+mat-card-actions
+  +center
+  justify-content: space-around
+.mat-raised-button
+  padding: 5px 50px
+
+  font-size: 16pt
+.mat-card-header
+  +center
+.mat-card-title
+  font-weight: bolder
+.signupSuccess, .signup
+  display: none
+.loginFailMsg
+  color: #ff0000
+.mat-card-subtitle
+  +center

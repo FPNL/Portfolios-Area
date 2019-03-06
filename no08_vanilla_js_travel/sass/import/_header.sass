@@ -1,0 +1,82 @@
+header
+    width: 1024px
+    display: grid
+    grid: [r1-s] ". . . . . . ." 89px [r1-e][r2-s] ". . . caption . . ." 40px [r2-e][r3-s] ". . . . . . . " 96px [r3-e][r4-s] ". . option option option . ." 48px [r4-e][r5-s] ". . . . . . . " 79px [r5-e][r6-s] ". label label label label label ." 112px [r6-e][r7-s] ". . . hr . . ." 49px [r7-e]/[c0] 112px [c1] 174px [c2] 93.5px [c3] 265px [c4] 93.5px [c5] 174px [c6] 112px [c7]
+    background: url(../img/Hero.png) no-repeat
+    border-bottom: 1px dashed #559AC8
+    // border-left: 20px solid transparent
+    margin: 0 auto
+.caption
+    height: 40px
+    width: 265px
+    grid-area: caption
+    color: #fff
+    font-size: 40px
+    line-height: 40px
+    text-align: justify
+    font-family: 'PingFangTC-Regular'
+    letter-spacing: 3.89px
+
+.options
+    width: 452px
+    height: 48px
+    grid-area: option
+    box-sizing: border-box
+    #selector
+        border: 3px solid #fff
+        background-color: rgba(255,255,255,.7)
+        width: 452px
+        height: 48px
+        font-size: 18px
+        line-height: 21px
+        border-radius: 3px
+        padding-left: 9.5px
+
+.hot_labels_area
+    width: 800px
+    height: 112px
+    background-color: #fff
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2)
+    border-radius: 5px
+    grid-area: label
+    box-sizing: border-box
+
+.hot_label_descr
+    padding-top: 20px
+    padding-left: 26px
+
+.hot_labels
+    padding-top: 14px
+    padding-left: 51px
+    display: flex
+    justify-content: space-around
+    span 
+        display: flex
+        justify-content: center
+        align-items: center
+        color: #ffffff
+        width: 130px
+        height: 42px
+        border-radius: 5px
+        font-size: 20px
+        cursor: pointer
+#label1
+    background-color: #8A82CC
+#label2
+    background-color: #FFA782
+#label3
+    background-color: #F5D105
+#label4
+    background-color: #559AC8 
+.hr_area
+    grid-area: hr 
+    place-self: end center 
+    width: 24px
+    height: 24px
+    background-color: #fff
+    border: 1px solid #559AC8
+    border-radius: 100%
+    text-align: center
+    transform: translateY(50%)
+    img 
+        filter: opacity(.5) drop-shadow(0 0 0 #14a4e2)

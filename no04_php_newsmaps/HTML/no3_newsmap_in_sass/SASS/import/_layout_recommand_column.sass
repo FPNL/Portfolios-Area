@@ -1,0 +1,102 @@
+#recommand_column
+    width: $recommand_column_w
+    height: $recommand_column_h
+    background-color: #fff
+    padding: 4px
+    border-radius: 5px
+    margin-left: 4px
+    #class_tags
+        #class_tags_caption
+            border-bottom: 3px solid $class_color
+            color: $class_color
+            font-size: 16pt
+            text-align: right
+            padding: 32px 16px 16px 0
+            position: relative
+            .transparent_img 
+                position: absolute
+                top: 0
+                right: 0
+                width: 100%
+                height: 100%
+        #class_tags_content
+            ul 
+                display: flex
+                justify-content: space-around
+                flex-wrap: wrap
+                padding: 8px 4px 
+                li 
+                    display: flex
+                    justify-content: flex-start
+                    padding-bottom: 8px 
+                    a 
+                        background: $class_color
+                        color: #ffffff
+                        border-radius: 10px
+                        padding: 8px
+                        text-align: center
+    #recommand_top5
+        #recommand_top5_caption
+            border-bottom: 3px solid $header_bg_color
+            color: $header_bg_color
+            font-size: 16pt
+            text-align: right
+            padding: 32px 16px 16px 0
+            position: relative
+            
+            .transparent_img 
+                position: absolute
+                top: 0
+                right: 0
+                width: 100%
+                height: 100%
+            span 
+        #recommand_top5_content
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            // align-items: center
+            padding: 4px
+            // margin-top: 8px
+            .recommand_top5_news
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                align-items: flex-start
+                margin-top: 4px
+                .recommand_top5_news_class
+                    display: flex
+                    flex-wrap: wrap
+                    a
+                        background: $class_color
+                        color: #ffffff
+                        border-radius: 10px
+                        padding: 8px
+                        text-align: center  
+                        margin-right: 4px
+                        margin-top: 4px
+                .recommand_top5_news_title
+                    margin-top: 16px
+                    a 
+                        color: black
+                        &:hover
+                            text-decoration: none
+            .recommand_top5_news_hr
+                margin: 8px 0
+                height: 2px
+                border: 0
+                height: 1.5px
+                background: $hr_color
+                background-image: linear-gradient(to right, #ccc, $hr_color, #ccc)
+    footer 
+        margin-top: 64px
+        text-align: right
+        font-size: 8pt
+        color: #ccc
+        position: relative
+        .transparent_img 
+            position: absolute
+            top: 0
+            right: 0
+            width: 100%
+            height: 60px

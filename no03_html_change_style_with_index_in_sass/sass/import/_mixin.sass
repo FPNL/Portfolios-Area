@@ -1,0 +1,15 @@
+$navbar-type: row,column //導覽列類型
+$navbar-choosen: index($navbar-type,column)//選擇導覽列類型
+$navbar-q: 7
+$max-w-pc: 2560px
+$w-pc: 1000px
+$W-pad: 767px
+$w-mobile: 419px
+$min-w: 320px
+
+@mixin flex($jc: space-between,$ai: initial,$fd: initial)
+    display: flex    
+    justify-content: $jc
+    align-items: $ai
+    flex-direction: $fd
+

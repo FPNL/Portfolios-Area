@@ -1,0 +1,351 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, main, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  width: 1024px;
+  display: -ms-grid;
+  display: grid;
+  grid: [r1-s] ". . . . . . ." 89px [r1-e] [r2-s] ". . . caption . . ." 40px [r2-e] [r3-s] ". . . . . . . " 96px [r3-e] [r4-s] ". . option option option . ." 48px [r4-e] [r5-s] ". . . . . . . " 79px [r5-e] [r6-s] ". label label label label label ." 112px [r6-e] [r7-s] ". . . hr . . ." 49px [r7-e]/[c0] 112px [c1] 174px [c2] 93.5px [c3] 265px [c4] 93.5px [c5] 174px [c6] 112px [c7];
+  background: url(../img/Hero.png) no-repeat;
+  border-bottom: 1px dashed #559AC8;
+  margin: 0 auto;
+}
+
+.caption {
+  height: 40px;
+  width: 265px;
+  grid-area: caption;
+  color: #fff;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: justify;
+  font-family: 'PingFangTC-Regular';
+  letter-spacing: 3.89px;
+}
+
+.options {
+  width: 452px;
+  height: 48px;
+  grid-area: option;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.options #selector {
+  border: 3px solid #fff;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 452px;
+  height: 48px;
+  font-size: 18px;
+  line-height: 21px;
+  border-radius: 3px;
+  padding-left: 9.5px;
+}
+
+.hot_labels_area {
+  width: 800px;
+  height: 112px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  grid-area: label;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.hot_label_descr {
+  padding-top: 20px;
+  padding-left: 26px;
+}
+
+.hot_labels {
+  padding-top: 14px;
+  padding-left: 51px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.hot_labels span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  width: 130px;
+  height: 42px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#label1 {
+  background-color: #8A82CC;
+}
+
+#label2 {
+  background-color: #FFA782;
+}
+
+#label3 {
+  background-color: #F5D105;
+}
+
+#label4 {
+  background-color: #559AC8;
+}
+
+.hr_area {
+  grid-area: hr;
+  place-self: end center;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border: 1px solid #559AC8;
+  border-radius: 100%;
+  text-align: center;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.hr_area img {
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 #14a4e2);
+          filter: opacity(0.5) drop-shadow(0 0 0 #14a4e2);
+}
+
+main {
+  margin: 76px auto 0;
+  text-align: right;
+  width: 1024px;
+}
+
+.region {
+  display: block;
+  width: 109px;
+  height: 36px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.region span {
+  font-size: 36px;
+  color: #8A82CC;
+}
+
+.region_cards {
+  margin: 24px 0 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  grid: [r1s] 273px/[c1] 464px [c2] 464px [c3];
+  grid-gap: 36px 16px;
+  text-align: left;
+}
+
+.card {
+  width: 464px;
+  height: 273px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.card_view {
+  background: no-repeat center;
+  background-image: url(http://khh.travel/FileArtPic.ashx?id=705&w=1280&h=960);
+  width: 464px;
+  height: 155px;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0 22px 14px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #ffffff;
+}
+
+.card_view span {
+  font-size: 24px;
+}
+
+.card_view span ~ span {
+  font-size: 16px;
+}
+
+.card_descr {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15px 24px 19px;
+  font-size: 16px;
+}
+
+.card_descr .card_descr_left {
+  padding: 6px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card_descr .card_descr_left div {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  margin-right: 9px;
+}
+
+.card_descr .card_descr_tag {
+  position: absolute;
+  right: 24px;
+  bottom: 19px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card_descr .card_descr_tag div {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  margin-right: 9px;
+}
+
+#page_ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+#page_ul .page_li {
+  margin: 0 24px;
+  font-size: 14px;
+  color: #4A4A4A;
+  cursor: pointer;
+}
+
+#page_ul .page_li_point {
+  margin: 0 34px;
+}
+
+footer {
+  background-color: #559AC8;
+  width: 1024px;
+  height: 90px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer span {
+  font-size: 14px;
+  color: #fff;
+}
+
+footer span ~ span {
+  color: #FFD366;
+  margin-top: 15px;
+}
+
+.gotop {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  position: fixed;
+  bottom: 50px;
+}
+
+.gotop img {
+  position: relative;
+  right: 100%;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,60 @@
+<mat-card>
+  <mat-card-header *ngIf="getNews">
+    <mat-card-title>{{getNews.title}}</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-title-group id="subtitleGroup">
+    <mat-card-subtitle id="firstSubtitle">
+      <span *ngIf="getNews">發布日期：{{getNews.time.add }}</span>
+    </mat-card-subtitle>
+    <mat-card-subtitle id="secondSubtitle" *ngIf="getNews">
+      <mat-chip-list>
+        <mat-chip *ngFor="let label of getNews.labels" (click)="goToSearch(label)">{{label}}</mat-chip>
+      </mat-chip-list>
+      <ng-container *ngIf="range">
+        <mat-icon class="place">place</mat-icon>
+        <span> {{range}}km </span>
+      </ng-container>
+      <mat-icon class="eye">remove_red_eye</mat-icon>
+      <span> {{getNews.info.readers}} </span>
+      <mat-icon class="star">star</mat-icon>
+      <span> {{getNews.info.star.point}} </span>
+    </mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content *ngIf="!getNews">
+    <div class="spinnerDiv">
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+  </mat-card-content>
+  <mat-card-content *ngIf="getNews">
+    <img mat-card-lg-image [src]="getNews.imagePath" alt="似乎沒有放上圖片">
+    <p>
+      {{getNews.content}}
+    </p>
+  </mat-card-content>
+  <mat-card-header *ngIf="getNews" class="footerHeader">
+    <img [src]="avatar" *ngIf="avatar" mat-card-avatar alt="似乎沒有">
+    <img src="assets/avatarWithoutLogin.png" *ngIf="!avatar" mat-card-avatar alt="似乎沒有">
+    <mat-card-subtitle>此則新聞由 <a href="#">{{getNews.user.nickname}}</a> 發布</mat-card-subtitle>
+    <mat-card-subtitle>覺得新聞不錯嗎? 請給我鼓勵！ </mat-card-subtitle>
+
+    <ng-container *ngIf="userLogin && !banRating && !successRating">
+      <ng-container *ngFor="let item of dislikeStar; let index = index">
+        <mat-icon class="starClick" *ngIf="index < star" (click)="passStar(index)">star</mat-icon>
+        <mat-icon class="starClick" *ngIf="index >= star" (click)="passStar(index)">star_border</mat-icon>
+      </ng-container>
+      <button mat-flat-button color="primary" (click)="rateStar()">送出</button>
+    </ng-container>
+
+    <ng-template [ngIf]="userLogin && banRating">
+      <span class="banRatingMsg">你已經評分過囉~</span>
+    </ng-template>
+
+    <ng-template [ngIf]="userLogin && successRating">
+      <span class="banRatingMsg">評分完成！</span>
+    </ng-template>
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <button *ngIf="alterAuthenticated" mat-button class="alterBtn" (click)="navigateToAlter()">修改新聞</button>
+  </mat-card-actions>
+</mat-card>

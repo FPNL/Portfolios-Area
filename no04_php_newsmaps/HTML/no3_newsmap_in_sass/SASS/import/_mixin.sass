@@ -1,0 +1,116 @@
+//For Practicing練習用
+$navbar-type: row,column //導覽列類型
+$navbar-choosen: index($navbar-type,column)//選擇導覽列類型
+$navbar-q: 7
+$max-w-pc: 2560px
+$w-pc: 1000px
+$W-pad: 767px
+$w-mobile: 419px
+$min-w: 320px
+
+
+
+//專案項目 "header:網頁上面那一排"  + "main:網頁內容"
+//header的寬度高度
+$head_height: 60px  //header的高度，預計50px
+$main_height: 100vh  //main的高度。利用JS 去計算height: calc( 100vh - 50px ) Notice: layout_map.sass line:101
+$main_height_test: 12 //無意義
+$nav_bar_w: 280px       //導覽列 寬度
+$nav_bar_item_h: 42px       //導覽列的各個項目 高度
+$nav_bar_item_icon_ml: 30px     //導覽項目的圖示 距離左邊 寬度
+$nav_bar_item_descr_ml: 20px    //導覽項目的文字 距離左邊圖示 寬度
+$logo_w: 100px  //logo寬度
+$logo_h: 50px   //logo高度
+$pers_icon_h: 50px  //大頭貼高度
+$pers_icon_w: 50px  //大頭貼寬度
+
+//--------- 地圖版 ------各欄位及內部寬度高度
+//MAP欄位的寬度高度
+$map_w: 100%
+$map_h: 100%
+//新聞欄位的寬度高度
+$news_post_map_w: 30%   //map版新聞欄位寬度
+$news_post_map_: 99%    //map版新聞欄位高度
+
+
+// ------文字版-------------- 總長1100PX
+//新聞欄位的寬度高度
+$news_post_word_w: 870px    //words版 新聞欄位的寬度
+$news_post_word_h: 99%      //maps版 新聞欄位的高度
+
+$headlines_height: 335px        //頭條新聞的總高度
+$headline_title_line_h: 23px    //頭條新聞標題行高
+$headline_title_line_numbers: 3 // 頭條新聞 幾則   
+$headlines_w: 33%             //頭條新聞寬度
+$headlines_img_w: 90%         //頭條新聞圖片寬度  285
+$headlines_img_h: 180px         //頭條新聞圖片高度
+$headline_main_h: 138px         //頭條新聞下半部高度
+$pop_news_img_w: 200px              //即時新聞圖片寬度 
+$pop_news_img_h: 200px              //即時新聞圖片高度
+$pers_card_w: 240px  //即時新聞的個人資訊卡片寬度
+$pers_card_h: 200px  //即時新聞的個人資訊卡片高度
+$pers_card_icon: 100px//即時新聞個人資訊大頭貼半徑
+
+//recommand_column的寬度高度
+$recommand_column_w: 230px  //recommand_column欄位的寬度
+$recommand_column_h: 99%    //recommand_column欄位的高度
+
+//顏色
+$class_color: #78bc62 //分類標籤顏色 淺綠色
+$rate_color: #fe0f6d //評價標籤顏色 洋紅色
+$views_color: #fd9c33 //觀看數標籤顏色 金黃色
+$distance_color: #0a46a8  //距離標籤顏色  藍色
+
+$header_bg_color: #6a77e7  //header 背景色 紫藍色
+$main_bg_color: #ffffff //main 背景色  白色
+
+$headline_bg_color: #fafafa  //頭條新聞背景色  淺灰色
+$headline_main_bg_color: #f6f6f6 //頭條新聞下半部背景色 深灰色
+
+$hr_color: #87acd9 //分隔線顏色 
+
+$google_location_color: #19a1c9 //GOOGLE定位背景色 青藍色
+$public_btn_color: #4489fe //儲存按鈕背景色 FB藍
+
+$order_color: #ff0ff0 //地圖版的排序分類 背景色
+
+$test_color_white: rgba(255,255,255,.5) //測試用背景白
+$test_color_black: rgba(0,0,0,.5)      //測試用背景黑
+
+// ------登入頁面-------------- 總長800PX
+$bg_img: url(../img/paper-bg.jpg)  //登入畫面背景圖
+$check_View_w: 800px        //兩者版面的總寬度
+$check_View_h: 390px        //兩者版面的總高度
+$login_signup_view_h: 48%       //註冊版面、登入版面的寬度
+$login_view_bgc: rgba(255,255,255,.85) //兩者版面的透白背景
+
+$inputView_w: 360px //輸入區的寬度
+$login_caption_font_size: 16pt //輸入區抬頭的字體
+$login_span_font_size: 16pt  //輸入區顯示輸入的字體
+$add_span_font_size: 14pt
+$login_hint_font_size: 12pt //輸入區提示的字體
+$login_hint_color: #9e9c9c //輸入區提示顏色
+$login_span_w: 25%  //輸入區抬頭的寬度
+$login_hint_w: 75% //輸入區輸入的寬度
+$okBtn_w: 360px //儲存按鈕的寬度
+$okBtn_h: 60px  //儲存按鈕的高度
+
+
+//修改新聞頁面
+$caption_h: 60px        //即時新聞標題高度
+
+
+    
+//IF應用
+$web-version: maps, words //網站有哪些類型 words-文字版、maps-地圖版
+$web-choosen: index($web-version, maps)//選擇網站類型，填入後方
+
+
+
+
+@mixin flex($jc: space-between,$ai: initial,$fd: initial)
+    display: flex    
+    justify-content: $jc
+    align-items: $ai
+    flex-direction: $fd
+

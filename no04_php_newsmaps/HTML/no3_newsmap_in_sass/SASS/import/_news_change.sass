@@ -1,0 +1,322 @@
+main 
+    display: flex
+    justify-content: center
+    // height: calc( 100vh - 60px)
+    padding: 20px 32px 0px
+    box-sizing: border-box
+    background-color: $headline_bg_color
+
+#pers_page_column
+    width: $news_post_word_w
+    background-color: #fff
+    .pers_page
+        .pers_page_caption
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 98%
+            padding: 8px
+            margin: 4px auto 0
+            border-bottom: 2px solid 
+            background-color: #fff
+            border-bottom-color: $header_bg_color
+            position: relative
+            height: 60px
+            font-size: $login_caption_font_size
+            .transparent_img
+                position: absolute
+                top: 0
+                left: 0
+                height: 100%
+                width: 50%
+            span 
+                color: $header_bg_color
+                font-weight: bolder
+                a 
+                    color: $header_bg_color
+#info_show
+    display: flex
+    flex-direction: column
+    justify-content: center
+    #info_show_content
+        align-self: flex-start
+        @extend %txtCenter
+        padding: 16px 32px
+        #info_show_icon
+            width: 150px
+            height: 150px
+            @extend %txtCenter
+
+            img 
+                height: 150px
+                width: 150px
+        #info_show_desrc
+            width: 280px
+            height: 180px
+            padding: 16px
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            align-items: flex-start
+            font-size: $login_span_font_size
+
+            span
+            #info_show_newsposts
+                align-self: center
+                margin-top: 8px
+                a 
+                    width: 100%
+                    height: 100%
+                    color: #ffffff
+                    width: 248px
+                    height: 35px
+                    background-color: $header_bg_color
+                    @extend %txtCenter
+                    border-radius: 60px
+                    text-decoration: none
+                    span 
+
+#add_news_main
+    // display: flex
+    // flex-direction: column
+    // justify-content: center
+    // align-items: center
+    #add_news_form    
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        .editTxt
+            width: 95%
+            height: 60px
+            display: flex
+            align-items: flex-start
+            border-bottom: 1px solid #000
+            font-weight: bolder
+            padding: 4px 16px
+            label
+                width: 100%
+                height: 50px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                span 
+                    padding: 0 4px
+                    width: $login_span_w
+                    font-size: $login_span_font_size
+                input
+                    width: $login_hint_w
+                    background-color: transparent
+                    height: 100%
+                    border: none
+                    padding: 4px 8px
+                    font-size: $login_hint_font_size
+                    &::placeholder
+                        color: $login_hint_color
+                        font-size: $login_hint_font_size
+                    &:focus
+                        boder: none
+                        outline: none
+                select
+                    width: 80%
+                    option 
+// Get position css
+#location_get
+    width: 95%
+    height: 80px
+    border-bottom: 1px solid #000
+    padding: 4px 16px
+    #forthelabel
+        height: 50px
+        width: 100%
+        height: 50px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        #location_get_title
+            width: 25%
+            font-size: $login_span_font_size
+            padding: 4px
+            @extend %txtCenter
+            justify-content: flex-start
+        #location_get_descr 
+            width: 55%
+            padding: 4px 4px
+            padding-left: 12px
+            font-size: $login_hint_font_size
+        div 
+            width: auto
+            @extend %txtCenter
+            #location_get_btn
+                // width: 20%
+                @extend %txtCenter
+                border: 0px
+                background-color: $google_location_color
+                border-radius: 50px
+                padding: 10px 16px
+                cursor: pointer
+.upload_img_row
+    height: auto
+    width: 95%
+    display: flex
+    border-bottom: 1px solid #000
+    font-weight: bolder
+    padding: 5px 16px 5px 16px
+    justify-content: space-between
+    align-items: flex-start
+    #upload_img_title
+        width: $login_span_w
+        @extend %txtCenter
+        justify-content: flex-start
+        span 
+            padding: 0 4px
+            height: 50px
+            width: auto
+            @extend %txtCenter
+            font-size: $login_span_font_size
+    #upload_img
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        width: 75%
+        #upload_img_items
+            padding: 16px 0 16px 0
+            .upload_img_item
+                font-size: $login_hint_font_size
+            hr 
+        .upload_img_btn
+            @extend %txtCenter
+            background-color: $google_location_color
+            border-radius: 50px
+            padding: 10px 16px
+            margin-top: 6px
+            cursor: pointer
+            border: none
+            font-weight: 500
+                
+#review
+    width: 95%
+    font-size: 16pt
+    
+    
+.okBtn
+    height: $okBtn_h
+    width: 90%
+    margin-top: 20px
+    @extend %txtCenter
+    input 
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        font-size: 14pt
+        height: 30px
+        color: #ffffff
+        text-decoration: none
+        border-radius: 50px
+        background-color: $public_btn_color
+        border: none
+                
+
+#recommand_column
+    width: $recommand_column_w
+    height: $recommand_column_h
+    padding: 4px
+    border-radius: 5px
+    background-color: #fff
+    margin-left: 4px
+    #class_tags
+        #class_tags_caption
+            border-bottom: 3px solid $class_color
+            color: $class_color
+            font-size: 16pt
+            text-align: right
+            padding: 32px 16px 16px 0
+            position: relative
+            .transparent_img 
+                position: absolute
+                top: 0
+                right: 0
+                width: 100%
+                height: 100%
+        #class_tags_content
+            ul 
+                display: flex
+                justify-content: space-around
+                flex-wrap: wrap
+                padding: 8px 4px 
+                li 
+                    display: flex
+                    justify-content: flex-start
+                    padding-bottom: 8px 
+                    a 
+                        background: $class_color
+                        color: #ffffff
+                        border-radius: 10px
+                        padding: 8px
+                        text-align: center
+    #recommand_top5
+        #recommand_top5_caption
+            border-bottom: 3px solid $header_bg_color
+            color: $header_bg_color
+            font-size: 16pt
+            text-align: right
+            padding: 32px 16px 16px 0
+            position: relative
+            
+            .transparent_img 
+                position: absolute
+                top: 0
+                right: 0
+                width: 100%
+                height: 100%
+            span 
+        #recommand_top5_content
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            // align-items: center
+            padding: 4px
+            // margin-top: 8px
+            .recommand_top5_news
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                align-items: flex-start
+                margin-top: 4px
+                .recommand_top5_news_class
+                    display: flex
+                    flex-wrap: wrap
+                    a
+                        background: $class_color
+                        color: #ffffff
+                        border-radius: 10px
+                        padding: 8px
+                        text-align: center  
+                        margin-right: 4px
+                        margin-top: 4px
+                .recommand_top5_news_title
+                    margin-top: 16px
+                    a 
+                        color: black
+                        &:hover
+                            text-decoration: none
+            .recommand_top5_news_hr
+                margin: 8px 0
+                height: 2px
+                border: 0
+                height: 1.5px
+                background: $hr_color
+                background-image: linear-gradient(to right, #ccc, $hr_color, #ccc)
+    footer 
+        margin-top: 64px
+        text-align: right
+        font-size: 8pt
+        color: #ccc
+        position: relative
+        .transparent_img 
+            position: absolute
+            top: 0
+            right: 0
+            width: 100%
+            height: 60px

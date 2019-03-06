@@ -1,0 +1,16 @@
+<mat-chip-list *ngIf="inputNewsContent.labels">
+    <mat-chip *ngFor="let label of inputNewsContent.labels" (click)="goToSearch(label)">{{label}}</mat-chip>
+</mat-chip-list>
+<a [routerLink]="['/article',inputNewsContent.id]"  class="linkTitle">
+  <p style="margin: 8px 0">
+    {{inputNewsContent.title}}
+  </p>
+</a>
+<div class="icons">
+  <!-- <mat-icon class="place">place</mat-icon>
+  <span> {{range}}km </span> -->
+  <mat-icon class="eye">remove_red_eye</mat-icon>
+  <span> {{inputNewsContent.info.readers}} </span>
+  <mat-icon class="star">star</mat-icon>
+  <span> {{inputNewsContent.info.star.point}} </span>
+</div>

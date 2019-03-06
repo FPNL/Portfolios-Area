@@ -1,0 +1,21 @@
+<!-- <mat-grid-list cols="4" rowHeight="2:1" gutterSize="4px">
+  <mat-grid-tile *ngFor="let i of topColumn" style="background-color: blue;" rowspan="2">
+    <app-top-title></app-top-title>
+  </mat-grid-tile>
+  <mat-grid-tile rowspan="7" style="background-color: green;" id="sideBartile">
+    <app-side-bar></app-side-bar>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3" *ngFor="let item of normalColumn" style="background-color: red;">
+    <app-normal-title></app-normal-title>
+    <app-user-title></app-user-title>
+  </mat-grid-tile>
+</mat-grid-list> -->
+<mat-grid-list cols="3" rowHeight="2:1" gutterSize="4px">
+  <mat-grid-tile rowspan="2" *ngFor="let news of getTopNews">
+    <app-top-title [inputNews]="news"></app-top-title>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="3" *ngFor="let news of getNormalNews">
+    <app-normal-title [inputNews]="news"></app-normal-title>
+    <app-user-title [inputUser]="news.user"></app-user-title>
+  </mat-grid-tile>
+</mat-grid-list>

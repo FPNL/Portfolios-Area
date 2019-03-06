@@ -1,0 +1,292 @@
+@charset="utf-8";
+
+*{
+	padding: 0px 0px;
+	margin: 0px 0px;
+	/*background: #000;*/
+	font-family: myriad;
+}
+
+#none{
+	/*display: none;font-size: 0pt;*/
+}
+
+#header{
+	position: sticky;
+    top: 0px;
+    /* right: 0;
+    left: 0;*/
+    display: block;
+    width: 100%;
+    height: 44px;
+    background: rgba(51,51,51,0.9);
+    font-size: 17px;
+    color: #fff;
+}
+
+
+#menu {
+	margin: 0 auto;
+    width: 980px;
+    padding: 0 22px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#menu li{
+	cursor: default;
+	display: inline-block;
+	list-style: none;
+    width: auto;
+    height: 44px;
+    user-select: none;
+    line-height: 44px;
+    color: #fff;
+}
+
+#logo-link{
+	display: inline-block;
+	height: 44px;
+	width: 44px;
+    padding: 0 10px;
+    /*transition: opacity 0.2s ;*/
+    white-space: nowrap;
+    text-decoration: none;
+    line-height: 44px;
+}
+
+.logo-img{
+	background-image: url(img/logo.png);
+	background-size: 44px 44px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+#menu li dl {
+}
+/*上面有設不曉得會不會影響到*/
+
+#menu li dt ,#menu li dd a{ 
+	/*display:block;*/
+	transition: all 1s ease-in;
+}
+
+#menu li dt { 
+	height: 44px;
+	box-sizing: border-box;
+  	text-align:center;
+	border-bottom:1px solid #b00;
+	}
+
+
+#menu li dl a{ 
+	display: block;
+	text-align: right;
+/*我有點白癡，這跟上面兩行一樣*/
+/*	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-end;*/
+	padding:0 5px 0 3px;
+	color: #0070c9; 
+	background: #fff; 
+	line-height: 35px;
+	text-decoration: none;
+	border:1px solid #b00;
+	border-bottom:1px solid #d2d2e0;
+	border-top:0px;
+	}
+
+#menu li dd a.last {
+	border-bottom:1px solid #b00;
+	border-radius: 0 0 5px 5px;
+	}
+
+#menu li dd { 
+	display:none;
+}
+
+#menu li:hover dd , #menu li a:hover dd { 
+	display:block;
+}
+
+#menu li:hover, #menu li a:hover {
+	/*border:0;*/
+	
+}
+
+#menu li dd a:hover {
+	text-decoration: underline;
+	}
+
+/*等到有回應的網頁再開啟
+#menu li dt a ,#menu li dt a:visited {
+	display:block; 
+    color:#333;
+    text-decoration:none;
+	}
+
+#menu li dd a, #menu li dd a:visited {
+	display:block; 
+	color:#fff; 
+    text-decoration:none; 
+	padding:4px 5px 4px 20px;
+	height:1em;
+    }*/
+
+#test01{
+	
+	}
+
+#content{
+	/*margin-top: 44px;*/
+	padding-top: 10px; 
+    width: 100%;
+	background-image: url(img/bg.jpg);	
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+}
+
+
+/*.table-div{
+	overflow:hidden;
+	width: 980px;
+	height: 800px;
+}*/
+.food-table-div{
+	width: 1000px;
+
+	margin:0px auto 10px;
+}
+
+table{
+	font-family: Arial;
+	border-collapse:collapse;
+	width: 1000px;
+	height: auto;
+}
+
+tr, th{
+	border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px 5px;
+	box-sizing: border-box;
+
+}
+
+.food-table-img{
+	background-color: #f0f0f5;
+	background:rgba(240,240,245,0.5);
+}
+
+.food-table-img-div{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 150px;
+	background-color: #d1d1e0;
+	height: 100%;
+	overflow:auto;
+}
+
+.food-table-txt{
+	padding: 0px 0px;
+}
+
+
+.food-table-txt-div{
+	display: block;
+	box-sizing: border-box;
+	background:rgba(255,255,255,0.5);
+	padding:5px 5px 5px 5px;
+	width: 100%;
+	height: 100%;
+	margin: 0px 0px;
+}
+
+.food-table-txt-div ol{
+	margin-top: 20px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+    margin-right: 0;
+    padding-left: 20px;
+    text-align: justify;
+}
+
+.food-table-last{
+	box-sizing: border-box;
+	background:rgba(255,255,255,0.5);
+	padding: 5px;
+	width: 70px;
+    white-space: nowrap;
+}
+
+.none_choose{
+
+}
+.food-tips{
+	display: block;
+	box-sizing: border-box;
+	background:rgba(255,255,255,0.5);
+	width: 980px;
+	height: auto;
+	border: 5px solid #FFF;
+	padding: 10px 5px;
+	border-radius:5px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+.food-line{
+	display: block;
+	margin: 0 auto;
+	height: 50px;
+	width: 1000px;
+	background-repeat: no-repeat;
+	background-size: 70% 100%;
+	background-position: center center ;
+	background-image: url(img/line.png);
+}
+
+
+
+#footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	width:100%;
+	height: 50px;
+	/*text-align: center;*/
+	line-height: 50px;
+    background: rgba(211,211,211,0.8);
+    font-size: 17px;
+    padding:0px 0px;
+    margin: 0px 0px;
+}
+
+.button {
+  display: inline-block;
+  font-size: 17px;
+  padding: 5px 5px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #ffd480;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 2px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+

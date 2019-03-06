@@ -1,0 +1,40 @@
+<!-- <div class="loginWrap" > -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        請輸入要註冊的帳號密碼
+      </mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="signup" (submit)="onSinup()">
+      <mat-card-content>
+
+        <mat-form-field class="normalInput">
+          <input matInput type="email" placeholder="E-mail帳號" formControlName="account"  (keydown.space)="$event.preventDefault()">
+          <mat-error *ngIf="signup.get('account').hasError('existed')">再換一個唄~</mat-error>
+          <mat-error *ngIf="signup.hasError('email',['account'])">輸入正確信箱</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="normalInput">
+          <input matInput type="password" placeholder="密碼" formControlName="password" (keydown.space)="$event.preventDefault()">
+          <mat-error *ngIf="signup.hasError('minlength',['password'])">至少輸入6位數</mat-error>
+        </mat-form-field>
+
+        <div class="nameInput">
+          <mat-form-field>
+            <input matInput placeholder="姓" formControlName="lastname" (keydown.space)="$event.preventDefault()">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="名" formControlName="firstname" (keydown.space)="$event.preventDefault()">
+          </mat-form-field>
+        </div>
+        <mat-form-field class="normalInput">
+          <input matInput placeholder="暱稱" formControlName="nickname" (keydown.space)="$event.preventDefault()">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button type="button" color="primary" (click)="toPrevious()"> 上一步 </button>
+        <button mat-raised-button type="submit" color="primary"> 下一步 </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+<!-- </div> -->

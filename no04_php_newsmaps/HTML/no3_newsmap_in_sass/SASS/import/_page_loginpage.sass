@@ -1,0 +1,79 @@
+main 
+    background-image: $bg_img
+    background-repeat: no-repeat
+    background-size: cover
+    height: calc( 100vh - 60px)
+    @extend %txtCenter
+
+#checkView
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    height: $check_View_h
+    width: $check_View_w
+
+
+
+.login_signup_view
+    width: $login_signup_view_h
+    height: 100%
+    background-color: $login_view_bgc
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    font-size: $login_span_font_size
+    border-radius: 10px
+    .inputView
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        align-items: center
+        padding: 4px
+        width: $inputView_w
+        .editTxt
+            width: 100%
+            height: 80px
+            display: flex
+            align-items: flex-end
+            border-bottom: 1px solid #000
+            label
+                width: 100%
+                height: 50px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                span 
+                    padding: 0 4px
+                    width: $login_span_w
+                input
+                    width: $login_hint_w
+                    background-color: transparent
+                    font-size: $login_hint_font_size
+                    height: 100%
+                    border: none
+                    padding: 4px 8px
+                    &::placeholder
+                        color: $login_hint_color
+                        font-size: $login_span_font_size
+                    &:focus
+                        boder: none
+                        outline: none
+    .okBtn
+        background-color: $header_bg_color
+        height: $okBtn_h
+        width: $okBtn_w
+        border-radius: 10px
+        margin-top: 30px
+        @extend %txtCenter
+        input 
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            height: 100%
+            color: #ffffff
+            text-decoration: none
+            border-radius: 10px
+            background-color: $header_bg_color
+            border: none

@@ -1,0 +1,34 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>分類標籤</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <mat-chip-list>
+        <mat-chip *ngFor="let label of labels" (click)="goToSearch(label)">
+          {{label}}
+        </mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header class="top5">
+    <mat-card-title class="top5">本周 TOP 5</mat-card-title>
+  </mat-card-header>
+  <mat-divider class="top5"></mat-divider>
+
+  <mat-card-content *ngFor="let item of news">
+    <div class="top5Content">
+      <mat-chip-list>
+          <mat-chip class="top5" *ngFor="let label of item.labels" (click)="goToSearch(label)">
+            {{label}}
+          </mat-chip>
+      </mat-chip-list>
+      <a [routerLink]="['/article',item.id]" class="linkTitle">
+        <p class="top5">{{item.title}}</p>
+      </a>
+      <mat-divider class="top5"></mat-divider>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,33 @@
+$iconMarginLeft: 5px
+@mixin center
+  display: flex
+  justify-content: center
+  align-items: center
+.place
+  color: #184dab
+.eye
+  color: #f5a147
+  margin-left: $iconMarginLeft
+.star
+  color: #fe0d6e
+  margin-left: $iconMarginLeft
+.mat-chip.mat-standard-chip
+  // font-size: 16pt
+  color: #fff
+  background-color: #7ec067
+.icons
+  display: flex
+  justify-content: flex-start
+  align-items: cneter
+  span
+    +center
+.linkTitle
+  color: #000
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+.chipLink
+  text-decoration: none
+  &:visited
+    text-decoration: none
+

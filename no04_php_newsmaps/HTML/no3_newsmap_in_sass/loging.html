@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Newser</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="css/login.css"> -->
+    <link rel="stylesheet" href="sass/default.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      #news_pers_inf_area a{
+          cursor: context-menu;
+      }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="news_nav_area">
+                <i class="fas fa-bars"></i>
+                <nav>
+                    <ul>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">哈囉</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">哈囉</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">哈囉</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">哈囉</span></a></li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">國際</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">當地</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">商業</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">科學與科技</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">娛樂</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">體育</span></a></li>
+                        <li><a href=""><span class="bar_icon"><i class="fas fa-globe-asia"></i></span><span class="bar_descr">健康</span></a></li>
+                    </ul>
+                </nav>
+            </div>  
+            <div id="news_logo_area">
+                <div>
+                    <a href="index.php"> 
+                        <img src="img/logo.jpg" alt="LOGO">
+                    </a>
+                </div>
+                <div>
+                    <a href="index.php">
+                        立即發現<br>
+                        周邊大小事
+                    </a>
+                </div>
+            </div>   
+            <div id="news_toggle_area">
+                <label>
+                    <a href="frm_news_map.php">
+                        <span>地圖版</span>  
+                    </a>  
+                    <label id="switch">
+                            <input id="switchToggle" type="checkbox" onchange="window.location.href='frm_news_map.php'" >
+                            <span class="slider round"></span>
+                    </label>
+                    
+                </label>
+            </div>
+            <div id="news_search_area">
+                
+                <div class="container-fluid">
+                    <nav class="navbar navbar-light bg-info">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2 bg-light" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0 bg-light" type="submit">Search</button>
+                        </form>
+                    </nav>
+                </div>
+            </div>
+            <div id="news_pers_inf_area">
+                <div id="pers_descr">
+                    <div id="pers_desc-1">
+                        <div id="pers_name"><a href=""><span>訪客</span></a></div>
+                        <!-- <div id="pers_location"><i class="fas fa-map-marker-alt"></i><a href=""><span>台中市</span></a> </div> -->
+                    </div>
+                    <!-- <div id="pers_desc-2"><span>發布<a href="">1000</a>則新聞</span></div> -->
+                </div>
+                <div id="pers_icon"><a href=""><span><img src="img/0.png" alt="頭像"></span></a> </div>
+            </div>
+
+
+        </header>
+
+        
+        <main>
+            <div id="checkView">
+                <div id="loginView" class="login_signup_view">
+                    <form action="frm_login.php" method="POST">
+                        <div class="inputView">
+                            <div class="editTxt">
+                                <label >
+                                    <span>帳號</span>
+                                    <input type="text" name="txtaccount" id="txtaccount" placeholder="輸入您的帳號">
+                                </label>
+                            </div>
+                            <div class="editTxt">
+                                <label>
+                                    <span>密碼</span>
+                                    <input type="password" name="txtloginpsd" id="txtloginpsd" placeholder="輸入您的密碼">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="okBtn">
+                            <input type="submit" value="登入" name="btnSingup" id="btnSingup">
+                        </div>
+                    </form>
+                </div>
+                <div id="signupView" class="login_signup_view">
+                    <form action="frm_login.php" method="POST">
+                        <div class="inputView">
+                            <div class="editTxt">
+                                <label>
+                                    <span>名稱</span>
+                                    <input type="text" name="txtname" id="txtname" placeholder="輸入您的暱稱">
+                                </label></div>
+                            <div class="editTxt">
+                                <label>
+                                    <span>信箱</span>
+                                    <input type="email" name="txtpassword" id="txtpassword" placeholder="輸入您的E-mail">
+                                </label></div>
+                            <div class="editTxt">
+                                <label>
+                                    <span>密碼</span>
+                                    <input type="password" name="txtnicename" id="txtnicename" placeholder="輸入您的密碼">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="okBtn">
+                            <input type="submit" value="註冊" name="btnSave" id="btnSave" >
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

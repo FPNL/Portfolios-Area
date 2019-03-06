@@ -1,0 +1,38 @@
+$toolbarContentHeight: 58px
+@mixin center
+  display: flex
+  justify-content: center
+  align-items: center
+
+.logoImg
+  background: url('../assets/logow.png') center center/contain no-repeat
+  height: $toolbarContentHeight
+  width: 100px
+
+.loginRegion
+  +center
+  height: 64px
+  margin: 0
+  padding: 0 20px 0 0
+  img
+    height: $toolbarContentHeight
+    width: auto
+  span
+    margin-left: 8px
+
+.searchForm
+  width: 20%
+  .searchField
+    width: 100%
+.loginLink
+  color: #fff
+  // text-decoration: none
+.mainContent
+  width: 100%
+  display: flex
+  justify-content: center
+.routerStatus
+  width: 770px
+  height: auto
+.sidebarStatus
+  display: none;

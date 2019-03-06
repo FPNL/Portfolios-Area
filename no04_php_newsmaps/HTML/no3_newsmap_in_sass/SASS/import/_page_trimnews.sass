@@ -1,0 +1,139 @@
+main 
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    padding: 8px 32px 0px
+    background-color: $headline_main_bg_color   
+
+#news_post
+    
+
+
+
+#news_pops_column
+    border-radius: 5px
+    background-color: #ffffff
+    width: $news_post_word_w
+    // overflow: scroll
+    #news_pop_caption
+        display: flex
+        justify-content: space-between
+        align-items: flex-end
+        font-size: 16pt
+        width: 98%
+        height: $caption_h
+        padding: 8px
+        margin: 8px auto 0px
+        border-bottom: 2px solid 
+        border-bottom-color: $header_bg_color
+        position: relative
+        font-weight: bolder
+        .transparent_img
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 50% 
+        span 
+            color: $header_bg_color
+            a 
+                color: $header_bg_color
+    .news_pop 
+        width: 100%
+        padding: 8px
+        background-color: #ffffff
+        display: flex 
+        justify-content: flex-start
+        .news_pop_img
+            border-radius: 5px 
+            a 
+                img 
+                    display: block
+                    width: $pop_news_img_w
+                    height: $pop_news_img_h
+                    box-shadow: 1px 1px 3px black
+        .news_pop_main
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            align-items: flex-start
+            width: 100%
+            border-radius: 5px
+            margin-left: 16px
+            .news_class
+                display: flex
+                flex-wrap: wrap
+                justify-content: flex-start
+                align-self: flex-start
+                padding: 8px 16px 4px 0
+                a 
+                    @extend %txtCenter
+                    border-radius: 10px
+                    margin-right: 8px 
+                    margin-bottom: 8px
+                    padding: 8px 8px
+                    background-color: $class_color
+                    color: #ffffff
+                    .news_clss_span 
+                        color: #ffffff
+            .news_title
+                margin-bottom: 8px
+                background-color: #ffffff
+                padding: 4px 8px 8px 0
+                word-break: break-all
+                a
+                    color: #000
+                    line-height: $headline_title_line_h
+                    span
+            .bottom_bar
+                display: flex
+                justify-content: space-between
+                align-items: center
+                padding-right: 8px
+                width: 100%
+                .news_icon_bar
+                    display: flex
+                    justify-content: flex-start
+                    align-items: center
+                    flex-wrap: wrap
+                    flex-shrink: 4
+                    width: 100%
+                    padding: 3px
+                    padding-left: 0
+                    .news_icon_items
+                        display: flex
+                        justify-content: flex-start
+                        justify-content: center
+                        align-items: center
+                        padding: 0 8px
+                        .news_icon
+                            padding-right: 4px
+                        .news_descr
+                            padding-right: 8px
+                            a 
+                                color: #000
+                    .news_distance
+                        color: $distance_color
+                        padding-left: 0
+                    .news_views
+                        color: $views_color
+                    .news_rate
+                        color: $rate_color
+                .news_trim
+                    a 
+                        background-color: $google_location_color
+                        color: #ffffff
+                        border-radius: 50px
+                        height: 50px
+                        padding: 4px 32px
+                        span
+.news_hr
+    margin: 8px 0
+    height: 2px
+    border: 0
+    height: 1.5px
+    background: $hr_color
+    background-image: linear-gradient(to right, #ccc, $hr_color, #ccc)
+         
+
+
